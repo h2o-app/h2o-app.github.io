@@ -22,5 +22,18 @@ hr{
     height: 1px;
     background-color: black;
     border: none;
-    margin: 0;
+    margin:0;
+}
+#main{
+    border-color:black;
+    border-width: 1px;
+    border-radius: 8px;
+    border-style: solid;
+    max-width: 1024px;
+    margin: auto;
+    background-color:#ffffff;
+    overflow: clip;
+}
+#question{
+    min-height:64px;
 }
