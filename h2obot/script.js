@@ -17,8 +17,8 @@ async function init(){
   pyodide = await loadPyodide();
   let AnalyzeR = await fetchData("/AnalyzeR.py")
   let qadata = await fetchData("/qadata.json")
-  let start = await fetchData("/init.py")
-  shownext = await fetchData("/shownext.py")
+  let start = await fetchData("init.py")
+  shownext = await fetchData("shownext.py")
   pyodide.FS.writeFile("/home/pyodide/AnalyzeR.py", AnalyzeR)
   pyodide.FS.writeFile("/qadata.json", qadata)
   pyodide.runPython("import AnalyzeR")
