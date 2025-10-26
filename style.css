@@ -19,6 +19,9 @@ button{
 button:hover{
     background-color:#efefef;
 }
+button:active{
+    box-shadow:none;
+}
 hr{
     height: 1px;
     background-color: black;
