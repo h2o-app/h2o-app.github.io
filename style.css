@@ -24,7 +24,7 @@ hr{
     border: none;
     margin:0;
 }
-#main{
+.main{
     border-color:black;
     border-width: 1px;
     border-radius: 8px;
