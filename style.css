@@ -1,10 +1,23 @@
-body,button{font-family: "Courier New";text-align: center;}
-button{width:100%;padding:5px;margin:5px}
+body,button{
+    font-family: "Courier New";
+    text-align: center;
+}
+button{
+    width:calc(100% - 8px);
+    margin:4px;
+    min-height:32px;
+}
 hr{
     height: 1px;
     background-color: black;
     border: none;
 }
 #main{
-    height: 100dvh
+    border-color:black;
+    border-width: 1px;
+    border-radius: 8px;
+    border-style: solid;
+}
+#question{
+    min-height:64px;
 }
