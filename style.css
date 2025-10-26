@@ -21,6 +21,7 @@ button:hover{
 }
 button:active{
     box-shadow:none;
+    background-color:#efefef;
 }
 hr{
     height: 1px;
