@@ -1,4 +1,4 @@
-body,button{
+body,button, .button{
     font-family: "Courier New";
     text-align: center;
     font-size:16px;
@@ -6,20 +6,25 @@ body,button{
 body{
     background-color:#f7f7f7;
 }
-button{
+button, .button{
+    text-decoration: none;
+    color:black;
     width:calc(100% - 8px);
+    display: inline-block;
+    justify-content: center;
     margin:4px;
-    min-height:32px;
+    min-height:37px;
     background-color:#f7f7f7;
     border-color:black;
     border-radius:4px;
     border-width:1px;
+    border-style: solid;
     box-shadow:0 0 2px grey;
 }
-button:hover{
+button:hover, .button:hover{
     background-color:#efefef;
 }
-button:active{
+button:active, .button:active{
     box-shadow:none;
     background-color:#efefef;
 }
@@ -28,6 +33,9 @@ hr{
     background-color: black;
     border: none;
     margin:0;
+}
+h1{
+    font-size:32px;
 }
 .main{
     border-color:black;
@@ -39,6 +47,11 @@ hr{
     background-color:#ffffff;
     overflow: clip;
     box-shadow:0 0 4px grey;
+}
+.innerButton{
+    vertical-align: middle;
+    justify-content: center;
+    margin:0;
 }
 #question{
     min-height:64px;
