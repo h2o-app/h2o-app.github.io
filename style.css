@@ -48,10 +48,10 @@ h1{
     overflow: clip;
     box-shadow:0 0 4px grey;
 }
-.innerButton{
-    vertical-align: middle;
+.button{
+    display: flex;
     justify-content: center;
-    margin:0;
+    align-items: center;
 }
 #question{
     min-height:64px;
