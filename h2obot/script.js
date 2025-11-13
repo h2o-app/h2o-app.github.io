@@ -14,22 +14,22 @@ async function fetchData(url) {
 var pyodide
 var next
 async function init(){
-  document.getElementById("answers").innerHTML = "Loading Pyodide..."
+  document.getElementById("primary").innerHTML = "Loading Pyodide..."
   pyodide = await loadPyodide();
-  document.getElementById("answers").innerHTML = "Fetching Data..."
+  document.getElementById("primary").innerHTML = "Fetching Data..."
   let AnalyzeR = await fetchData("/AnalyzeR.py")
-  let qadata = await fetchData("/qadata.json")
-  let start = await fetchData("init.py")
-  shownext = await fetchData("shownext.py")
-  document.getElementById("answers").innerHTML = "Loading Content..."
+  let qadata = await fetchData("data.json")
+  let start = await fetchData("main.py")
+  document.getElementById("primary").innerHTML = "Writing Files..."
   pyodide.FS.writeFile("/home/pyodide/AnalyzeR.py", AnalyzeR)
-  pyodide.FS.writeFile("/qadata.json", qadata)
+  pyodide.FS.writeFile("/data.json", qadata)
+  document.getElementById("primary").innerHTML = "Awaiting Content..."
   pyodide.runPython("import AnalyzeR")
   pyodide.runPython(start)
-  pyodide.runPython(shownext)
+  pyodide.runPython("addQuestion()")
 }
-async function nextQuestion(value){
-  pyodide.runPython("selection = "+value)
-  pyodide.runPython(shownext)
+async function nextQuestion(num,value){
+  pyodide.runPython("addAnswer("+num+",'"+value+"')")
+  pyodide.runPython("addQuestion()")
 }
 init();

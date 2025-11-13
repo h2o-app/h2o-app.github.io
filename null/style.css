@@ -1,14 +1,12 @@
-html,body,button, .button{
+body,button, .button{
     font-family: "Courier New";
     text-align: center;
     font-size:16px;
-    min-height: 100%;
 }
 body{
     background-color:#f7f7f7;
 }
 button, .button{
-    cursor:pointer;
     text-decoration: none;
     color:black;
     width:calc(100% - 8px);
@@ -21,7 +19,7 @@ button, .button{
     border-radius:4px;
     border-width:1px;
     border-style: solid;
-    box-shadow:0 0 4px #555;
+    box-shadow:0 0 2px grey;
 }
 button:hover, .button:hover{
     background-color:#efefef;
@@ -45,40 +43,16 @@ h1{
     border-radius: 8px;
     border-style: solid;
     max-width: 1024px;
-    width:100%;
     margin: auto;
     background-color:#ffffff;
     overflow: clip;
-    box-shadow:0 0 4px #555;
+    box-shadow:0 0 4px grey;
 }
 .button{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#container{
-    display: flex;
-    justify-content: center;
-    height: 100%;
-}
-#mainBox{
-    top:100px;
-    bottom:8px;
-    width:100%;
-    margin-left: auto;
-    margin-right: auto;
-    position:fixed;
-    display: grid;
-    grid-template-rows: auto 100px;
-}
-#primary{
-    width:100%;
-    overflow:scroll
-}
-#secondary{
-    width:100%;
-    border-top:1px solid black;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+#question{
+    min-height:64px;
 }
