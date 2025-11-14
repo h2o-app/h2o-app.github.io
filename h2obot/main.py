@@ -30,7 +30,7 @@ def formatAns(text, value):
 
 
 def appendPrimary(text, pos):
-    primary.scrollTop = primary.scrollHeight
+    global primary
     if pos == 0:
         primary.insertAdjacentHTML(
             "beforeend", "<div class='leftMessage'>" + text + "</div>"
@@ -41,6 +41,7 @@ def appendPrimary(text, pos):
         )
     else:
         primary.insertAdjacentHTML("beforeend", text)
+    primary.scrollTop = primary.scrollHeight
 
 
 def addQuestion():
