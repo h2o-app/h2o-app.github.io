@@ -56,19 +56,37 @@ h1{
     justify-content: center;
     align-items: center;
 }
+.leftMessage{
+    text-align:left;
+    background-color:#efefef;
+    max-width:80%;
+    width: fit-content;
+    margin-top: 8px;
+    padding:4px;
+    border-radius: 0 4px 4px 0;
+}
+.rightMessage{
+    text-align:right;
+    background-color:#efefef;
+    width: fit-content;
+    max-width: 80%;
+    margin: 4px 0 4px auto;
+    padding:8px;
+    border-radius: 4px 0 0 4px;
+}
+
 #container{
     display: flex;
     justify-content: center;
     height: 100%;
+    width: 100%;
 }
 #mainBox{
     top:100px;
     bottom:8px;
-    width:100%;
-    margin-left: auto;
-    margin-right: auto;
     position:fixed;
     display: grid;
+    width:calc(100% - 16px);
     grid-template-rows: auto 100px;
 }
 #primary{

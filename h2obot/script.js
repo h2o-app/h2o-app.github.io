@@ -23,13 +23,13 @@ async function init(){
   document.getElementById("primary").innerHTML = "Writing Files..."
   pyodide.FS.writeFile("/home/pyodide/AnalyzeR.py", AnalyzeR)
   pyodide.FS.writeFile("/data.json", qadata)
-  document.getElementById("primary").innerHTML = "Awaiting Content..."
+  document.getElementById("primary").innerHTML = "Executing Python..."
   pyodide.runPython("import AnalyzeR")
   pyodide.runPython(start)
   pyodide.runPython("addQuestion()")
 }
 async function nextQuestion(num,value){
-  pyodide.runPython("addAnswer("+num+",'"+value+"')")
+  pyodide.runPython('addAnswer('+num+',"'+value+'")')
   pyodide.runPython("addQuestion()")
 }
 init();
