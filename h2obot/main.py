@@ -15,7 +15,7 @@ except Exception as e:
 
 primary.innerHTML = ""
 secondary.innerHTML = ""
-questionID = "0"
+questionID = "START"
 data = json.loads(content)
 
 
