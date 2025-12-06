@@ -17,7 +17,7 @@ async function init(){
   document.getElementById("primary").innerHTML = "Loading Pyodide..."
   pyodide = await loadPyodide();
   document.getElementById("primary").innerHTML = "Fetching Data..."
-  let AnalyzeR = await fetchData("/AnalyzeR.py")
+  let AnalyzeR = await fetchData("../AnalyzeR.py")
   let qadata = await fetchData("data.json")
   let start = await fetchData("main.py")
   document.getElementById("primary").innerHTML = "Writing Files..."
