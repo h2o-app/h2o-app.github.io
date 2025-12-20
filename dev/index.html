@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<body>
+    <textarea id="input" rows="40" style="width:calc(100% - 32px);"></textarea>
+    <br>
+    <button onclick="generate()">Generate</button>
+    <br>
+    <pre id="output" style="border: solid 1px black;"></pre>
+    <script>
+        function generate() {
+            input = document.getElementById("input")
+            output = document.getElementById("output")
+            split1 = input.value.split("\n\n\n")
+            split2 = split1.map((x) => x.split("\n\n").map((y) => y.split("\n")))
+            output.innerText = JSON.stringify(split2, null, 2)
+        }
+    </script>
+</body>
+
+</html>
