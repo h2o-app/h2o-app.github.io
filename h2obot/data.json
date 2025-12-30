@@ -10,32 +10,32 @@
             [
                 "What is this?",
                 "I'm H2OBot, a computerized help system for teens. I'm not a replacement for real professionals, but my job is to help people find the help they need. I'll listen and give advice and resources, 100% human verified, no AI-generated text involved.",
-                "0-explain"
+                "start-explain"
             ]
         ]
     },
-    "0-explain": {
+    "start-explain": {
         "q": "Want to know more?",
         "a": [
             [
-                "Let's chat.",
+                "Let's chat",
                 "Alright then, let's begin.",
                 "chat-begin"
             ],
             [
                 "What are you?",
                 "I'm a computerized system that's made to help teen find the support they need. Unlike AI chatbots, everything I say has been written and verified by humans. Additionally, I can provide links and other resources to direct teens towards further help. All of this is done locally and privately on your computer, never sent to servers or strangers.",
-                "0-explain"
+                "start-explain"
             ],
             [
                 "What's 'H2O'?",
-                "Hybridized Help Online, or H2O, is a project aimed to help teens for help resources easily on the internet. I, H2OBot, am the current project being made at H2O. We're aiming to create free, accesible software that allows people to find the help they need, without AI.",
-                "0-explain"
+                "Hybridized Help Online, or H2O, is a project aimed to help teens for help resources easily on the internet. I, H2OBot, am the current project being made at H2O. We're aiming to create free, accessible software that allows people to find the help they need, without AI.",
+                "start-explain"
             ],
             [
                 "Can I trust you?",
                 "All data and input on this bot is completely confidential. Even though all our data and text is human-verified, your input is never sent outside this tab. Once the bot loads, you won't even need an internet connection, everything runs safely within your own computer, not on a server thousands of miles away.",
-                "0-explain"
+                "start-explain"
             ]
         ]
     },

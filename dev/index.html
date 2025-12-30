@@ -1,19 +1,34 @@
 <!doctype html>
 <html>
 
-<body>
-    <textarea id="input" rows="40" style="width:calc(100% - 32px);"></textarea>
+<body style="margin:auto;width:calc(100% - 64px)">
+    <textarea id="input" rows="40" style="width:100%"></textarea>
     <br>
-    <button onclick="generate()">Generate</button>
+    <button onclick="generate()">Generate</button> - <button onclick="copy()">Copy Text</button>
     <br>
     <pre id="output" style="border: solid 1px black;"></pre>
     <script>
         function generate() {
             input = document.getElementById("input")
             output = document.getElementById("output")
-            split1 = input.value.split("\n\n\n")
-            split2 = split1.map((x) => x.split("\n\n").map((y) => y.split("\n")))
-            output.innerText = JSON.stringify(split2, null, 2)
+            questionList = input.value.split("\n\n\n")
+            questionDict = {}
+            for (var i = 0; i < questionList.length; i++) {
+                let [key, question, spacer, ...rest] = questionList[i].split('\n')
+                questionDict[key] = {}
+                questionDict[key]["q"] = question
+                questionDict[key]["a"] = rest.join("\n").split("\n\n").map((y) => y.split("\n"))
+            }
+            output.innerText = JSON.stringify(questionDict, null, 2)
+
+        }
+        async function copy() {
+            output = document.getElementById("output")
+            try {
+                await navigator.clipboard.writeText(output.innerText);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+            }
         }
     </script>
 </body>
