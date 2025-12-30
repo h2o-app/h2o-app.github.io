@@ -19,7 +19,7 @@
                 questionDict[key]["q"] = question
                 questionDict[key]["a"] = rest.join("\n").split("\n\n").map((y) => y.split("\n"))
             }
-            output.innerText = JSON.stringify(questionDict, null, 2)
+            output.innerText = JSON.stringify(questionDict, null, 4)
 
         }
         async function copy() {
