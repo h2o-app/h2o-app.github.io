@@ -39,8 +39,8 @@
             ]
         ]
     },
-    "chat-begin":{
-        "q":"How's your day been going?",
+    "chat-begin": {
+        "q": "How's your day been going?",
         "a": [
             [
                 "good",

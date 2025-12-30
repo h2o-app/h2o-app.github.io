@@ -13,7 +13,7 @@ async function fetchData(url) {
 }
 var pyodide
 var next
-async function init(){
+async function init() {
   document.getElementById("primary").innerHTML = "Loading Pyodide..."
   pyodide = await loadPyodide();
   document.getElementById("primary").innerHTML = "Fetching Data..."
@@ -28,8 +28,8 @@ async function init(){
   pyodide.runPython(start)
   pyodide.runPython("addQuestion()")
 }
-async function nextQuestion(num,value){
-  pyodide.runPython('addAnswer('+num+',"'+value+'")')
+async function nextQuestion(num, value) {
+  pyodide.runPython('addAnswer(' + num + ',"' + value + '")')
   pyodide.runPython("addQuestion()")
 }
 init();
