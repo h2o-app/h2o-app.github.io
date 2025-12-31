@@ -13,11 +13,15 @@
             output = document.getElementById("output")
             questionList = input.value.split("\n\n\n")
             questionDict = {}
+            function separateAns(inlist) {
+                list = inlist.split("\n")
+                return {"o":list[0],"r":list[1],"n":list[2]}
+            }
             for (var i = 0; i < questionList.length; i++) {
                 let [key, question, spacer, ...rest] = questionList[i].split('\n')
                 questionDict[key] = {}
                 questionDict[key]["q"] = question
-                questionDict[key]["a"] = rest.join("\n").split("\n\n").map((y) => y.split("\n"))
+                questionDict[key]["a"] = rest.join("\n").split("\n\n").map((y) => separateAns(y))
             }
             output.innerText = JSON.stringify(questionDict, null, 4)
 

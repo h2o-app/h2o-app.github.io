@@ -8,17 +8,17 @@ primary.innerHTML = "Awaiting JSON..."
 
 try:
     with open("/data.json", "r") as file:
-        data = json.loads(file.read())
+        data: dict[str, dict[str, str | list[dict[str, str]]]] = json.loads(file.read())
 except Exception as e:
-    data = {
+    data: dict[str, dict[str, str | list[dict[str, str]]]] = {
         "START": {
-            "q": "CRITICAL INTERNAL ERROR -  PLEASE REPORT TO US.",
+            "q": "CRITICAL INTERNAL ERROR -  PLEASE REPORT TO US. JSON Data file was not found.",
             "a": [
-                [
-                    "OK",
-                    "Thank you for understanding. we will try and fix the issue ASAP.",
-                    "END",
-                ]
+                {
+                    "o": "OK",
+                    "r": "Thank you for understanding. we will try and fix the issue ASAP. Please make a report if possible.",
+                    "n": "END",
+                }
             ],
         }
     }
@@ -30,16 +30,18 @@ secondary.innerHTML = ""
 questionID: str = "START"
 
 
-def formatAns(text, value) -> str:
+# Convert question option to html button
+def formatAns(text: list[str], value: int | str) -> str:
     return (
         '<button onclick="nextQuestion(this.value,this.innerText)" value="'
         + str(value)
         + '">'
-        + text[0]
+        + text["o"]
         + "</button>"
     )
 
 
+# Add message to message box
 def appendPrimary(text: str, pos: int):
     global primary
     if pos == 0:
@@ -55,6 +57,7 @@ def appendPrimary(text: str, pos: int):
     primary.scrollTop = primary.scrollHeight
 
 
+# Update Bot after question
 def addQuestion():
     global questionID
     if questionID == "END":
@@ -62,14 +65,15 @@ def addQuestion():
         secondary.innerHTML = ""
     else:
         appendPrimary(data[questionID]["q"], 0)
-        answerList = data[questionID]["a"]
+        answerList: list[dict[str, str]] = data[questionID]["a"]
         secondary.innerHTML = "".join(
             list(map(formatAns, answerList, range(len(answerList))))
         )
 
 
+# Add answer of question to message list
 def addAnswer(num: int, answer: str):
     global questionID
     appendPrimary(answer, 1)
-    appendPrimary(data[questionID]["a"][num][1], 0)
-    questionID = data[questionID]["a"][num][2]
+    appendPrimary(data[questionID]["a"][num]["r"], 0)
+    questionID = data[questionID]["a"][num]["n"]
