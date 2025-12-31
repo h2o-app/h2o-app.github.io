@@ -8,18 +8,29 @@ primary.innerHTML = "Awaiting JSON..."
 
 try:
     with open("/data.json", "r") as file:
-        content = file.read()
+        data = json.loads(file.read())
 except Exception as e:
+    data = {
+        "START": {
+            "q": "CRITICAL INTERNAL ERROR -  PLEASE REPORT TO US.",
+            "a": [
+                [
+                    "OK",
+                    "Thank you for understanding. we will try and fix the issue ASAP.",
+                    "END",
+                ]
+            ],
+        }
+    }
     print(f"An error occurred: {e}")
 
 
 primary.innerHTML = ""
 secondary.innerHTML = ""
-questionID = "START"
-data = json.loads(content)
+questionID: str = "START"
 
 
-def formatAns(text, value):
+def formatAns(text, value) -> str:
     return (
         '<button onclick="nextQuestion(this.value,this.innerText)" value="'
         + str(value)
@@ -29,7 +40,7 @@ def formatAns(text, value):
     )
 
 
-def appendPrimary(text, pos):
+def appendPrimary(text: str, pos: int):
     global primary
     if pos == 0:
         primary.insertAdjacentHTML(
@@ -45,6 +56,7 @@ def appendPrimary(text, pos):
 
 
 def addQuestion():
+    global questionID
     if questionID == "END":
         appendPrimary("SYSTEM - DATA END", 0)
         secondary.innerHTML = ""
@@ -56,7 +68,7 @@ def addQuestion():
         )
 
 
-def addAnswer(num, answer):
+def addAnswer(num: int, answer: str):
     global questionID
     appendPrimary(answer, 1)
     appendPrimary(data[questionID]["a"][num][1], 0)
