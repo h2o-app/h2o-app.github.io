@@ -4,28 +4,11 @@ import json
 primary = document.getElementById("primary")
 secondary = document.getElementById("secondary")
 
-primary.innerHTML = "Awaiting JSON..."
 
-try:
-    with open("/data.json", "r") as file:
-        data: dict[str, dict[str, str | list[dict[str, str]]]] = json.loads(file.read())
-except Exception as e:
-    data: dict[str, dict[str, str | list[dict[str, str]]]] = {
-        "START": {
-            "q": "CRITICAL INTERNAL ERROR -  PLEASE REPORT TO US. JSON Data file was not found.",
-            "a": [
-                {
-                    "o": "OK",
-                    "r": "Thank you for understanding. we will try and fix the issue ASAP. Please make a report if possible.",
-                    "n": "END",
-                }
-            ],
-        }
-    }
-    print(f"An error occurred: {e}")
+with open("/data.json", "r") as file:
+    data: dict[str, dict[str, str | list[dict[str, str]]]] = json.loads(file.read())
 
 
-primary.innerHTML = ""
 secondary.innerHTML = ""
 questionID: str = "START"
 
@@ -77,3 +60,6 @@ def addAnswer(num: int, answer: str):
     appendPrimary(answer, 1)
     appendPrimary(data[questionID]["a"][num]["r"], 0)
     questionID = data[questionID]["a"][num]["n"]
+
+
+primary.innerHTML += "OK<br>Starting H2OBot in 5 Seconds."
