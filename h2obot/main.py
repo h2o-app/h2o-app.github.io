@@ -62,4 +62,4 @@ def addAnswer(num: int, answer: str):
     questionID = data[questionID]["a"][num]["n"]
 
 
-primary.innerHTML += "OK<br>Starting H2OBot in 5 Seconds."
+primary.innerHTML += "OK<br><b>Starting H2OBot in 5 Seconds.</b>"

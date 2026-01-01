@@ -16,26 +16,24 @@ var next
 async function init() {
     document.getElementById("primary").innerHTML += "OK<br>Loading Pyodide... "
     pyodide = await loadPyodide();
-    document.getElementById("primary").innerHTML += "OK<br>"
-    document.getElementById("primary").innerHTML += "Fetching Python Script... "
+    document.getElementById("primary").innerHTML += "OK<br>Fetching Python Script... "
     let start = await fetchData("main.py")
-    document.getElementById("primary").innerHTML += "OK<br>"
-    document.getElementById("primary").innerHTML += "Fetching JSON Data... "
+    document.getElementById("primary").innerHTML += "OK<br>Fetching JSON Data... "
     let qadata = await fetchData("data.json")
-    document.getElementById("primary").innerHTML += "OK<br>"
-    document.getElementById("primary").innerHTML += "Fetching Neural Network Script File... "
+    
+    document.getElementById("primary").innerHTML += "OK<br>Fetching Neural Network Script File... "
     let AnalyzeR = await fetchData("../AnalyzeR.py")
+
     document.getElementById("primary").innerHTML += "OK<br><b>Network Requests Complete. No More Internet Connection Required.</b><br>"
     document.getElementById("primary").innerHTML += "Writing JSON Data File... "
     pyodide.FS.writeFile("/data.json", qadata)
-    document.getElementById("primary").innerHTML += "OK<br>"
-    document.getElementById("primary").innerHTML += "Writing Neural Network File... "
+
+    document.getElementById("primary").innerHTML += "OK<br>Writing Neural Network File... "
     pyodide.FS.writeFile("/home/pyodide/AnalyzeR.py", AnalyzeR)
-    document.getElementById("primary").innerHTML += "OK<br>"
-    document.getElementById("primary").innerHTML += "Importing Neural Network... "
+    document.getElementById("primary").innerHTML += "OK<br>Importing Neural Network... "
     pyodide.runPython("import AnalyzeR")
-    document.getElementById("primary").innerHTML += "OK<br>"
-    document.getElementById("primary").innerHTML += "Running Python Script... "
+
+    document.getElementById("primary").innerHTML += "OK<br>Running Python Script... "
     pyodide.runPython(start)
     function startBot() {
         primary.innerHTML = ""
