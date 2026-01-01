@@ -20,7 +20,7 @@ async function init() {
     let start = await fetchData("main.py")
     document.getElementById("primary").innerHTML += "OK<br>Fetching JSON Data... "
     let qadata = await fetchData("data.json")
-    
+
     document.getElementById("primary").innerHTML += "OK<br>Fetching Neural Network Script File... "
     let AnalyzeR = await fetchData("../AnalyzeR.py")
 
@@ -36,10 +36,10 @@ async function init() {
     document.getElementById("primary").innerHTML += "OK<br>Running Python Script... "
     pyodide.runPython(start)
     function startBot() {
-        primary.innerHTML = ""
+        primary.innerHTML += "<br><br>This is the start of your H2OBot History.<br>"
         pyodide.runPython("addQuestion()")
     }
-    setTimeout(startBot, 5000)
+    setTimeout(startBot, 1000)
 }
 async function nextQuestion(num, value) {
     pyodide.runPython('addAnswer(' + num + ',"' + value + '")')
