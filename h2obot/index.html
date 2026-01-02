@@ -2,26 +2,28 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>H2OBot</title>
-  <link href="../style.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js"></script>
-  <link rel="icon" type="image/x-icon" href="../favicon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>H2OBot</title>
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
 </head>
 
 <body>
-  <h1><a href="../">H2O - Hybridized Help Online</a></h1>
-  H2OBot v2.3.2 Prototype
-  <div id="container">
-    <div class="main" id="mainBox">
-      <div id="primary">
-        Loading Javascript...
-      </div>
-      <div id="secondary"></div>
+    <h1><a href="../">H2O - Hybridized Help Online</a></h1>
+    H2OBot v2.4.0 Prototype
+    <div id="container">
+        <div class="main" id="mainBox">
+            <div id="primary">
+                <div id="devInfo" style="text-align:left;"><button class="link"
+                        onclick="document.getElementById('devInfo').innerHTML = ''">Hide Initiation
+                        Log</button><br>Loading Javascript...</div>
+            </div>
+            <div id="secondary"></div>
+        </div>
     </div>
-  </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script id="pyodideScript" src="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js"></script>
 </body>
 
 </html>

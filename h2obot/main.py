@@ -2,6 +2,7 @@ from js import document
 import json
 
 primary = document.getElementById("primary")
+devInfo = document.getElementById("devInfo")
 secondary = document.getElementById("secondary")
 
 
@@ -16,7 +17,7 @@ questionID: str = "START"
 # Convert question option to html button
 def formatAns(text: list[str], value: int | str) -> str:
     return (
-        '<button onclick="nextQuestion(this.value,this.innerText)" value="'
+        '<button class="button" onclick="nextQuestion(this.value,this.innerText)" value="'
         + str(value)
         + '">'
         + text["o"]
@@ -62,4 +63,4 @@ def addAnswer(num: int, answer: str):
     questionID = data[questionID]["a"][num]["n"]
 
 
-primary.innerHTML += "OK<br><b>Starting H2OBot...</b>"
+devInfo.innerHTML += "OK!<br><b>Starting H2OBot...</b><br><br><hr>"

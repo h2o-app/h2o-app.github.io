@@ -8,11 +8,19 @@ button,
     min-height: 100%;
 }
 
+.link {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 body {
     background-color: #f7f7f7;
 }
 
-button,
 .button {
     cursor: pointer;
     text-decoration: none;
@@ -30,12 +38,12 @@ button,
     box-shadow: 0 0 4px #555;
 }
 
-button:hover,
+
 .button:hover {
     background-color: #efefef;
 }
 
-button:active,
+
 .button:active {
     box-shadow: none;
     background-color: #efefef;
