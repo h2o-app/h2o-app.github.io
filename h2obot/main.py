@@ -63,4 +63,8 @@ def addAnswer(num: int, answer: str):
     questionID = data[questionID]["a"][num]["n"]
 
 
-devInfo.innerHTML += "OK!<br><b>Starting H2OBot...</b><br><br><hr>"
+devInfo.innerHTML += """
+OK!<br><b>Starting H2OBot...</b><br><br>
+<button class="link cn"onclick="document.getElementById('devInfo').innerHTML = ''">
+<b>Hide Initiation Log</b></button><hr><br>
+"""

@@ -2,10 +2,14 @@ html,
 body,
 button,
 .button {
-    font-family: "Courier New";
+    font-family: "Arial";
     text-align: center;
     font-size: 16px;
     min-height: 100%;
+}
+
+.cn {
+    font-family: "Courier New";
 }
 
 .link {
