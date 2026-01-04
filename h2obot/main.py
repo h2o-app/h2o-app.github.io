@@ -1,4 +1,4 @@
-from js import document
+from js import document  # type: ignore
 import json
 
 primary = document.getElementById("primary")
@@ -20,7 +20,7 @@ def formatAns(text: list[str], value: int | str) -> str:
         '<button class="button" onclick="nextQuestion(this.value,this.innerText)" value="'
         + str(value)
         + '">'
-        + text["o"]
+        + str(text["o"])
         + "</button>"
     )
 
@@ -45,8 +45,9 @@ def appendPrimary(text: str, pos: int):
 def addQuestion():
     global questionID
     if questionID == "END":
-        appendPrimary("SYSTEM - DATA END", 0)
+        appendPrimary("This is the end of your H2OBot History.<br><br>", -1)
         secondary.innerHTML = ""
+
     else:
         appendPrimary(data[questionID]["q"], 0)
         answerList: list[dict[str, str]] = data[questionID]["a"]
@@ -59,8 +60,9 @@ def addQuestion():
 def addAnswer(num: int, answer: str):
     global questionID
     appendPrimary(answer, 1)
-    appendPrimary(data[questionID]["a"][num]["r"], 0)
-    questionID = data[questionID]["a"][num]["n"]
+    ans: dict[str,str] = data[questionID]["a"][num]
+    appendPrimary(ans["r"], 0)
+    questionID = ans["n"]
 
 
 devInfo.innerHTML += """
