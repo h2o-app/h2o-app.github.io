@@ -73,6 +73,7 @@ function addAnswer(num) {
 // Initiate on page load
 async function init() {
     offlineMode = false;
+    enableDownload = false;
     questionID = "START"
     devInfo.innerHTML += " OK!<br>"
     await delay(100)
@@ -92,11 +93,17 @@ async function init() {
         <br><b>Starting H2OBot...</b>
         <br><br>
         <button class="link cn"onclick="document.getElementById('devInfo').innerHTML = ''">
-        <b>Hide Initiation Log</b></button><br>
-        <button class="link cn"onclick="downloadPage()">
-        <b>Download Offline Version</b></button>
-        <hr><br>
+        <b>Hide Initiation Log</b></button>
     `)
+
+    if (!offlineMode && enableDownload) {
+        devInfo.innerHTML += (`
+        <br><button class="link cn"onclick="downloadPage()">
+        <b>Download Offline Version</b></button>
+    `)
+
+    }
+    devInfo.innerHTML += "<hr><br>"
     // Start the actual bot
     await delay(200)
     primary.innerHTML += "This is the start of your H2OBot History.<br>"
