@@ -36,7 +36,7 @@ function appendPrimary(text, pos) {
 
 function addQuestion() {
     if (questionID == "END") {
-        appendPrimary("This is the end of your H2OBot History.<br><br>", -1)
+        appendPrimary("<br>This is the end of your H2OBot History.<br><br>", -1)
     } else {
         appendPrimary(data[questionID]["q"], 0)
     }
@@ -72,6 +72,7 @@ function addAnswer(num) {
 
 // Initiate on page load
 async function init() {
+    document.title = "H2OBot " + document.getElementById("version").innerText
     offlineMode = false;
     enableDownload = false;
     questionID = "START"

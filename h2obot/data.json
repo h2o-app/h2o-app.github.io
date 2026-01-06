@@ -1,6 +1,6 @@
 {
     "START": {
-        "q": "Hi, I'm H2OBot. Want to do anything?",
+        "q": "Hi, I'm H2OBot. I'm a simple teen help bot. You can interact with me by pressing one of the buttons at the bottom of this page. Want to do anything?",
         "a": [
             {
                 "o": "Let's chat.",
@@ -40,21 +40,66 @@
         ]
     },
     "chat-begin": {
-        "q": "How's your day been going?",
+        "q": "How have you been feeling lately?",
         "a": [
             {
-                "o": "good",
-                "r": "that's good to hear.",
-                "n": "END"
+                "o": "Good",
+                "r": "That's good to hear.",
+                "n": "ask-school"
             },
             {
-                "o": "okay",
+                "o": "Okay",
                 "r": "I see.",
+                "n": "ask-school"
+            },
+            {
+                "o": "Bad",
+                "r": "Sorry to hear that.",
+                "n": "ask-school"
+            }
+        ]
+    },
+    "ask-school": {
+        "q": "Has school been a major stressor of your life?",
+        "a": [
+            {
+                "o": "Yes",
+                "r": "That's a common stressor among teens.",
+                "n": "ask-school-type"
+            },
+            {
+                "o": "No",
+                "r": "Avoiding feeling overwhelmed at school is important. Good job on managing your school stress.",
+                "n": "ask-home"
+            }
+        ]
+    },
+    "ask-school-type": {
+        "q": "What kinds of school stress do you deal with?",
+        "a": [
+            {
+                "o": "Bullying",
+                "r": "That's unfortunate. However, there are many ways to deal with bullying. Here's some resources on how you can solve the issue: [INSERT CONTENT]",
+                "n": "ask-home"
+            },
+            {
+                "o": "Academic Stress",
+                "r": "Stress from assignments and grades can overwhelm students easily. Try and balance your workload and manage your time. Here's some advice on that topic: [INSERT CONTENT]",
+                "n": "ask-home"
+            }
+        ]
+    },
+    "ask-home": {
+        "q": "Do you experience stress from home?",
+        "a": [
+            {
+                "o": "Yes",
+                "r": "Your experience is shared amongst many teens. Here's some resources that can help: [INSERT CONTENT]",
                 "n": "END"
             },
             {
-                "o": "bad",
-                "r": "Want to talk about it?",
+                "o": "No",
+                "r": "It's important to maintain your life at both school and home.",
                 "n": "END"
             }
         ]
