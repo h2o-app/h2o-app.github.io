@@ -72,12 +72,12 @@ function addAnswer(num) {
 
 // Initiate on page load
 async function init() {
-    document.title = "H2OBot " + document.getElementById("version").innerText
+    document.title = "H2OBot " + document.getElementById("version").innerText;
     offlineMode = false;
     enableDownload = false;
-    questionID = "START"
-    devInfo.innerHTML += " OK!<br>"
-    await delay(100)
+    questionID = "START";
+    devInfo.innerHTML += " OK!<br>";
+    await delay(100);
     if (offlineMode) {
         rawdata = "REPLACE"
         data = JSON.parse(rawdata)
