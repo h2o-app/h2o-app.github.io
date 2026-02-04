@@ -125,11 +125,12 @@ async function nextQuestion(num, value) {
     addOptions()
 }
 
+// Download an offline version of the page (Currently unused)
 async function downloadPage() {
-    html = await fetchData("index.html")
+    html = await fetchData("./index.html")
     css = await fetchData("../style.css")
-    js = await fetchData("script.js")
-    json = await fetchData("data.json")
+    js = await fetchData("./script.js")
+    json = await fetchData("./data.json")
 
     // Insert CSS into HTML
     cssReplaced = html.replace('<link href="../style.css" rel="stylesheet" type="text/css" />', "<style>" + css + "</style>")
@@ -141,7 +142,7 @@ async function downloadPage() {
     jsonReplaced = offlineMode.replace('rawdata = "REPLACE"', "rawdata = `" + json + "`")
 
     // Combine HTML and JS changes
-    html_json = cssReplaced.replace('<script src="script.js"></scr' + 'ipt>', "<script>" + jsonReplaced + '</scr' + 'ipt>')
+    html_json = cssReplaced.replace('<script src="./script.js"></scr' + 'ipt>', "<script>" + jsonReplaced + '</scr' + 'ipt>')
 
     blob = new Blob([html_json], { type: 'text/plain' })
     const url = URL.createObjectURL(blob);
