@@ -74,7 +74,7 @@ function addAnswer(num) {
 async function init() {
     document.title = "H2OBot " + document.getElementById("version").innerText;
     offlineMode = false;
-    enableDownload = false;
+    enableDownload = true;
     questionID = "START";
     devInfo.innerHTML += " OK!<br>";
     await delay(100);
