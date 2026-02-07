@@ -65,26 +65,46 @@
             {
                 "o": "Yes",
                 "r": "That's a common stressor among teens.",
-                "n": "ask-school-type"
+                "n": "ask-bullying"
             },
             {
                 "o": "No",
                 "r": "Avoiding feeling overwhelmed at school is important. Good job on managing your school stress.",
-                "n": "ask-home"
+                "n": "ask-bullying"
             }
         ]
     },
-    "ask-school-type": {
-        "q": "What kinds of school stress do you deal with?",
+    "ask-bullying": {
+        "q": "Do you deal with bullying or harassment at school? It's not uncommon, often 'jokes' or pranks can turn into bullying in a school setting.",
         "a": [
             {
-                "o": "Bullying",
+                "o": "Yes",
                 "r": "That's unfortunate. However, there are many ways to deal with bullying. Here's some resources on how you can solve the issue: [INSERT CONTENT]",
+                "n": "ask-academic"
+            },
+            {
+                "o": "Maybe",
+                "r": "It's important to be able to recognise the signs of bullying. Sometimes, a classmate's behavior might be annoying but not quite at the level of bullying, in which case it's still a good idea to tell them to stop their annoying behavior. Here's some tips: [INSERT CONTENT]",
+                "n": "ask-academic"
+            },
+            {
+                "o": "No",
+                "r": "That's good to hear. Bullying is common in grade schools and many students have to deal with it. If you ever feel pressured or bullied, there's always resources here.",
+                "n": "ask-academic"
+            }
+        ]
+    },
+    "ask-academic": {
+        "q": "Have you experienced academic stress? Grades are a common stressor in Middle or High school.",
+        "a": [
+            {
+                "o": "Yes",
+                "r": "Sorry to hear that. Remember that grades aren't everything. Colleges and similar organizations will only view high school grades, and often these organizations prioritize other factors over grades. If you want to learn more, here's some resources: [INSERT CONTENT]",
                 "n": "ask-home"
             },
             {
-                "o": "Academic Stress",
-                "r": "Stress from assignments and grades can overwhelm students easily. Try and balance your workload and manage your time. Here's some advice on that topic: [INSERT CONTENT]",
+                "o": "Nope",
+                "r": "Most teens experience some level of academic stress throughout school. If you ever feel pressured by grades or similar things, you can look at these pages here: [INSERT CONTENT]",
                 "n": "ask-home"
             }
         ]
@@ -95,13 +115,29 @@
             {
                 "o": "Yes",
                 "r": "Your experience is shared amongst many teens. Here's some resources that can help: [INSERT CONTENT]",
-                "n": "END"
+                "n": "final"
             },
             {
                 "o": "No",
-                "r": "It's important to maintain your life at both school and home.",
+                "r": "It's important to maintain your life at both school and home. Parents, siblings, or other factors at home can put pressure in teens' lives. If you ever need help with any of these, you can look at these resources: [INSERT CONTENT]",
+                "n": "final"
+            }
+        ]
+    },
+    "final": {
+        "q": "That's all for now. I hope I have been able to help you in some way. Remember that there are an endless amount of online resources that anyone can use. Additionally, trusted adults at home, school, or any organization are always there to assist you if you need help. Is there anything you would like before we end this conversation?",
+        "a": [
+            {
+                "o": "Nothing",
+                "r": "Alright then. It was great talking to you.",
+                "n": "END"
+            },
+            {
+                "o": "I would like to provide feedback",
+                "r": "If you want to provide feedback to Hybridized Help Online, you can submit any anonymous feedback <a href='https://forms.gle/4uxLbTrPvBC4zXu26'>here</a>. We're always happy to hear your interests!",
                 "n": "END"
             }
         ]
     }
 }
+
