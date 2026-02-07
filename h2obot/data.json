@@ -79,12 +79,12 @@
         "a": [
             {
                 "o": "Yes",
-                "r": "That's unfortunate. However, there are many ways to deal with bullying. Here's some resources on how you can solve the issue: [INSERT CONTENT]",
+                "r": "That's unfortunate. However, there are many ways to deal with bullying. If you want general information about the subject, you can head over to <a href='https://www.stopbullying.gov/'>StopBullying.gov</a>, an official government website that provides helpful information. If your school has an effective counselor system, contacting your counselor can always help. You can also visit <a href='https://www.crisistextline.org/'>Crisis Text Line</a> if you are interested in being able to text a helpline.",
                 "n": "ask-academic"
             },
             {
                 "o": "Maybe",
-                "r": "It's important to be able to recognise the signs of bullying. Sometimes, a classmate's behavior might be annoying but not quite at the level of bullying, in which case it's still a good idea to tell them to stop their annoying behavior. Here's some tips: [INSERT CONTENT]",
+                "r": "It's important to be able to recognise the signs of bullying. Sometimes, a classmate's behavior might be annoying but not quite at the level of bullying, in which case it's still a good idea to tell them to stop their annoying behavior. Here's some general information about bullying: <a href='https://www.stopbullying.gov/'>StopBullying.gov</a> This is an official US government site which can provide useful info about the subject of bullying.",
                 "n": "ask-academic"
             },
             {
@@ -114,7 +114,7 @@
         "a": [
             {
                 "o": "Yes",
-                "r": "Your experience is shared amongst many teens. Here's some resources that can help: [INSERT CONTENT]",
+                "r": "Your experience is shared amongst many teens. Siblings and parents can be stressful at times. Here's some resources that can help: [INSERT CONTENT]",
                 "n": "final"
             },
             {
@@ -140,4 +140,3 @@
         ]
     }
 }
-
