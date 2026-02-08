@@ -64,7 +64,7 @@
         "a": [
             {
                 "o": "Yes",
-                "r": "That's a common stressor among teens.",
+                "r": "That's a common source of stress among teens. Try and manage your school stress when you're able to, always prioritize your health.",
                 "n": "ask-bullying"
             },
             {
@@ -114,12 +114,12 @@
         "a": [
             {
                 "o": "Yes",
-                "r": "Your experience is shared amongst many teens. Siblings and parents can be stressful at times. Here's some resources that can help: [INSERT CONTENT]",
+                "r": "Your experience is shared amongst many teens. Siblings and parents can be stressful at times. If you want to know more about Family pressures, you can visit <a href='https://www.spacebetweencounselingservices.com/therapy-insight/family-expectations-family-pressure-therapy-for-teens'>Space Between Counseling Services</a> for a comprehensive read about the subject.",
                 "n": "final"
             },
             {
                 "o": "No",
-                "r": "It's important to maintain your life at both school and home. Parents, siblings, or other factors at home can put pressure in teens' lives. If you ever need help with any of these, you can look at these resources: [INSERT CONTENT]",
+                "r": "It's important to maintain your life at both school and home. Parents, siblings, or other factors at home can put pressure in teens' lives. If you ever need help with any of these, you can look at <a href='https://www.spacebetweencounselingservices.com/therapy-insight/family-expectations-family-pressure-therapy-for-teens'>Space Between Counseling Services</a>, a site that offers information as well as counseling opportunities.",
                 "n": "final"
             }
         ]
