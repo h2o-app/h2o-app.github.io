@@ -99,12 +99,12 @@
         "a": [
             {
                 "o": "Yes",
-                "r": "Sorry to hear that. Remember that grades aren't everything. Colleges and similar organizations will only view high school grades, and often these organizations prioritize other factors over grades. If you want to learn more, here's some resources: [INSERT CONTENT]",
+                "r": "Sorry to hear that. Remember that grades aren't everything. Colleges and similar organizations will only view high school grades, and often these organizations prioritize other factors over grades. When it comes to tips for dealing with academic stress, <a href=\"https://hillsidehorizon.com/blog/coping-academic-pressure-strategies-teen-mental-health/\">Hillside Horizon</a> is an informative website that can give you essential resources. If you want to specifically learn what is and isn't important for college, <a href=\"https://www.collegedata.com/resources/getting-in/what-do-colleges-look-for-in-students\">CollegeData.com</a> has information on that topic.",
                 "n": "ask-home"
             },
             {
                 "o": "Nope",
-                "r": "Most teens experience some level of academic stress throughout school. If you ever feel pressured by grades or similar things, you can look at these pages here: [INSERT CONTENT]",
+                "r": "Most teens experience some level of academic stress throughout school. If you ever feel pressured by grades or similar things, you can look at <a href=\"https://hillsidehorizon.com/blog/coping-academic-pressure-strategies-teen-mental-health/\">Hillside Horizon</a> for some useful info.",
                 "n": "ask-home"
             }
         ]
