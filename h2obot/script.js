@@ -38,7 +38,7 @@ function addQuestion() {
     if (questionID == "END") {
         appendPrimary("<br>This is the end of your H2OBot History.<br><br>", -1);
     } else {
-        appendPrimary(data[questionID]["q"], 0);
+        appendPrimary(data[questionID].q, 0);
     };
 };
 
@@ -49,13 +49,13 @@ function addOptions() {
             '<button class="button" onclick="nextQuestion(this.value,this.innerText)" value="'
             + String(i)
             + '">'
-            + String(text["o"])
+            + String(text.o)
             + "</button>"
         );
     };
     if (questionID != "END") {
         i = -1;
-        secondary.innerHTML = data[questionID]["a"].map(x => formatAns(x)).join("");
+        secondary.innerHTML = data[questionID].a.map(x => formatAns(x)).join("");
     };
 };
 
@@ -65,9 +65,9 @@ function addResponse(answer) {
 };
 
 function addAnswer(num) {
-    ans = data[questionID]["a"][num];
-    appendPrimary(ans["r"], 0);
-    questionID = ans["n"];
+    ans = data[questionID].a[num];
+    appendPrimary(ans.r, 0);
+    questionID = ans.n;
 };
 
 // Initiate on page load
@@ -125,7 +125,7 @@ async function nextQuestion(num, value) {
     addOptions();
 };
 
-// Download an offline version of the page (Currently unused)
+// Download an offline version of the page
 async function downloadPage() {
     html = await fetchData("./index.html");
     css = await fetchData("../style.css");
@@ -144,7 +144,13 @@ async function downloadPage() {
     // Combine HTML and JS changes
     html_json = cssReplaced.replace('<script src="./script.js"></scr' + 'ipt>', "<script>" + jsonReplaced + '</scr' + 'ipt>');
 
-    blob = new Blob([html_json], { type: 'text/plain' });
+    cleanedup = html_json.replaceAll(/(?<!:)\/\/.*/gm, "").replaceAll(/\r?\n|\r/gm, "");
+
+    for (let step = 0; step < 5; step++) {
+        cleanedup = cleanedup.replaceAll("  ", " ")
+    }
+
+    blob = new Blob([cleanedup], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
