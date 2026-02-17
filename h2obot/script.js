@@ -130,7 +130,7 @@ async function downloadPage() {
     html = await fetchData("./index.html");
     css = await fetchData("../style.css");
     js = await fetchData("./script.js");
-    json = await fetchData("./data.json");
+    json = JSON.stringify(JSON.parse(await fetchData("./data.json")));
 
     // Insert CSS into HTML
     cssReplaced = html.replace('<link href="../style.css" rel="stylesheet" type="text/css" />', "<style>" + css + "</style>");
